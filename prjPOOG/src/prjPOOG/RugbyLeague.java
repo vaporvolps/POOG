@@ -1,23 +1,27 @@
 package prjPOOG;
 
+import java.util.ArrayList;
+
 public class RugbyLeague extends League<RugbyMatch>{
 
 	public RugbyLeague(){
-		super();
+		super(RugbyMatch.class);
 	}
 	
 	public RugbyLeague(String name){
-		super(name);
+		super(RugbyMatch.class, name);
 	}
 	
 	public void calcScore(){ 
-		for (int i = 0 ; i < getSizeMatches(); i++){
+		for (int i = 0 ; i < getNMatches(); i++){
 			int homeScore,guestScore;
 			Team homeTeam, guestTeam;
 			homeScore = getHomeScore(i);
 			guestScore = getGuestScore(i);
 			homeTeam = getHomeTeam(i);
 			guestTeam = getGuestTeam(i);
+			//homeTeam.setnPlayedMatches(homeTeam.getnPlayedMatches()+1);
+			//guestTeam.setnPlayedMatches(guestTeam.getnPlayedMatches()+1);
 			RugbyMatch match = getMatch(i);
 			if ( match.getHomeTry() >= 4)/*bonus score*/
 				setScore(homeTeam,1);
@@ -37,6 +41,5 @@ public class RugbyLeague extends League<RugbyMatch>{
 			}
 			
 		}
-	
 	}
 }

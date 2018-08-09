@@ -5,22 +5,23 @@ import java.util.*;
 public class VolleyLeague extends League<VolleyMatch> {
 
 	public VolleyLeague(){
-		super();
+		super(VolleyMatch.class);
 	}
 	
 	public VolleyLeague(String name){
-		super(name);
+		super(VolleyMatch.class, name);
 	}
 	
-
 	public void calcScore(){
-		for (int i = 0 ; i < getSizeMatches(); i++){
+		for (int i = 0 ; i < getNMatches(); i++){
 			int homeScore,guestScore;
 			Team homeTeam, guestTeam;
 			homeScore = getHomeScore(i);
 			guestScore = getGuestScore(i);
 			homeTeam = getHomeTeam(i);
 			guestTeam = getGuestTeam(i);
+			//homeTeam.setnPlayedMatches(homeTeam.getnPlayedMatches()+1);
+			//guestTeam.setnPlayedMatches(guestTeam.getnPlayedMatches()+1);
 			if (homeScore > guestScore) {
 				if ((guestScore==0) || (guestScore==1))
 					setScore(homeTeam,3); 
@@ -37,7 +38,6 @@ public class VolleyLeague extends League<VolleyMatch> {
 				}
 			}	
 		}
-	
 	}
 }
 
