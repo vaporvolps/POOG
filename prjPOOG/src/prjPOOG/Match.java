@@ -72,7 +72,18 @@ public class Match {
 	public void setPlayed(boolean p) {
 		played = p;
 	}
-	
+	/*
+	public Team getWhoWon (){// occhio, la partita deve essere stata giocata!
+			if (homeScore > guestScore) {
+				System.out.println("ha vinto " + getHomeTeam().getName());
+				return homeTeam;
+			}
+			else {
+				System.out.println("oppure ha vinto " + getHomeTeam().getName());
+				return guestTeam;
+			}
+
+	} */
 	@Override
 	public String toString() {
 		return homeTeam.getName() + " " + homeScore + " - " + guestScore + " " + guestTeam.getName();

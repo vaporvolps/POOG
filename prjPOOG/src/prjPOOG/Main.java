@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Main {
 	public static void main (String [] args) throws InstantiationException, IllegalAccessException{
 		ArrayList<League<? extends Match>> leagues = new ArrayList<>();
-		FootballLeague v = new FootballLeague();
+		VolleyLeague v = new VolleyLeague();
 		//VolleyLeague v = new VolleyLeague();
 		//RugbyLeague v = new RugbyLeague();
 		//leagues.add(l);
@@ -33,6 +33,8 @@ public class Main {
 		v.addTeam(new Team("BarbaraCulos"));
 		v.addTeam(new Team("Dioboseeculos"));
 		v.generateSchedule();
+		ArrayList<VolleyMatch> round = v.getRound(0);
+		//round.get(0).setSetHome(0, 25);
 		//v.getPlayedMatches();
 		//v.addMatch(m3);
 		//v.generateSchedule();
