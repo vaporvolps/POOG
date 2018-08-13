@@ -8,14 +8,10 @@ public abstract class League<T extends Match> /*implements Comparator <Team>*/{
 	private Class<T> cl; 
 	private String name;
 	private ArrayList <Team> teams;
-	//private ArrayList <Team> ranking;// questo sarà da togliere
-	//private ArrayList <ArrayList<Integer>> rank;// questo sarà da togliere
 	private Schedule<T> schedule;//questa è la classe della mia classifica
 	public League (Class<T> clazz){
 		name = "";
 		teams = new ArrayList <Team> ();
-		//ranking = new ArrayList <Team> ();
-		//rank = new ArrayList <ArrayList<Integer>> ();
 		schedule = new Schedule<>();
 		cl = clazz;
 	}
@@ -41,10 +37,8 @@ public abstract class League<T extends Match> /*implements Comparator <Team>*/{
 	}
 	
 	public void addTeam(Team t){
-		if ( t != null ){
+		if ( t != null )
 			teams.add(t);
-			//ranking.put(t,0);
-		}
 	}
 	
 	public ArrayList <T> getPlayedMatches (){

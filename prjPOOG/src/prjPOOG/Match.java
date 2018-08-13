@@ -1,37 +1,26 @@
 package prjPOOG;
 
-import java.sql.Date;
-
 public class Match {
+	/*valuta se salvare la giornata*/
 	boolean played;
-	//private Date dateMatch;
 	private Team homeTeam, guestTeam;
 	private int homeScore, guestScore;
 	
 	public Match (){
-		//dateMatch = new Date (00-00-0000);
 		homeTeam = guestTeam = null;
 		homeScore = guestScore = 0;
 		played = false;
 	}
 	
 	// controllare che homeTeam e guestTeam abbiano lo stesso sport
-	public Match (Date dateMatch, Team homeTeam, Team guestTeam, int homeScore, int guestScore){
-		//setDateMatch(dateMatch);
+	public Match (Team homeTeam, Team guestTeam, int homeScore, int guestScore){
 		setHomeTeam(homeTeam);
 		setGuestTeam(guestTeam);
 		setHomeScore (homeScore);
 		setGuestScore(guestScore);
 		played = true;
 	}
-	/*
-	public void setDateMatch(Date dateMatch){
-		if (dateMatch != null)
-			this.dateMatch = dateMatch;
-	}
-	public Date getDateMatch(){
-		return dateMatch;
-	}*/
+
 	public Team getHomeTeam(){
 		return homeTeam;
 	}
@@ -52,17 +41,15 @@ public class Match {
 		return homeScore;
 	}
 	public void setHomeScore(int homeScore){
-		if (homeScore>=0) {
+		if (homeScore>=0) 
 			this.homeScore = homeScore;	
-		}
 	}
 	public int getGuestScore(){
 		return guestScore;
 	}
 	public void setGuestScore(int guestScore){
-		if (guestScore>=0) {
+		if (guestScore>=0) 
 			this.guestScore = guestScore;
-		}
 	}
 	
 	public boolean isPlayed() {
@@ -72,19 +59,7 @@ public class Match {
 	public void setPlayed(boolean p) {
 		played = p;
 	}
-	/*
-	public Team getWhoWon (){// occhio, la partita deve essere stata giocata!
-			if (homeScore > guestScore) {
-				System.out.println("ha vinto " + getHomeTeam().getName());
-				return homeTeam;
-			}
-			else {
-				System.out.println("oppure ha vinto " + getHomeTeam().getName());
-				return guestTeam;
-			}
-
-	} */
-	@Override
+	
 	public String toString() {
 		return homeTeam.getName() + " " + homeScore + " - " + guestScore + " " + guestTeam.getName();
 	}

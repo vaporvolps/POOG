@@ -16,8 +16,8 @@ public class FootballMatch extends Match {
 		setHomeRedCards(homeRedCards);
 		setGuestRedCards(guestRedCards);
 	}
-	public FootballMatch(Date dateMatch, Team homeTeam, Team guestTeam, int homeScore, int guestScore, int homeYellowCards, int guestYellowCards, int homeRedCards, int guestRedCards){
-		super(dateMatch, homeTeam, guestTeam, homeScore, guestScore);
+	public FootballMatch( Team homeTeam, Team guestTeam, int homeScore, int guestScore, int homeYellowCards, int guestYellowCards, int homeRedCards, int guestRedCards){
+		super( homeTeam, guestTeam, homeScore, guestScore);
 		setHomeYellowCards(homeYellowCards);
 		setGuestYellowCards(guestYellowCards);
 		setHomeRedCards(homeRedCards);

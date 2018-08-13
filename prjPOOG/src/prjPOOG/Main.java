@@ -2,44 +2,50 @@ package prjPOOG;
 
 import java.util.ArrayList;
 
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+
+
 public class Main {
 	public static void main (String [] args) throws InstantiationException, IllegalAccessException{
+		/*
 		ArrayList<League<? extends Match>> leagues = new ArrayList<>();
 		VolleyLeague v = new VolleyLeague();
-		//VolleyLeague v = new VolleyLeague();
-		//RugbyLeague v = new RugbyLeague();
-		//leagues.add(l);
-		//leagues.add(v);
+		//FootballLeague v = new FootballLeague();
 		leagues.add(v);
-		//FootballMatch m = new FootballMatch();
-		//VolleyMatch m2 = new VolleyMatch();
-		/*ArrayList <RugbyMatch> m3 = new ArrayList<RugbyMatch>();
-		for (int i = 0 ; i < v.getNumberTeams(); i++){
-			RugbyMatch m = new RugbyMatch();
-			m.setHomeTeam();
-		}*/
-		//RugbyMatch m3 = new RugbyMatch();
-
-		//m3.setHomeTeam(f);
-		//m3.setGuestTeam(t);
-		//m3.setHomeScore(3);
-		//m3.setGuestScore(3);
-		//m3.setHomeTry(4);
-		//m2.setSetHome(0,5);
-		//m2.setSetHome(1,6);
-		//m2.printSetHome();
 		v.addTeam(new Team("Albatros"));
 		v.addTeam(new Team("Flamingos"));
 		v.addTeam(new Team("BarbaraCulos"));
 		v.addTeam(new Team("Dioboseeculos"));
 		v.generateSchedule();
-		ArrayList<VolleyMatch> round = v.getRound(0);
-		//round.get(0).setSetHome(0, 25);
-		//v.getPlayedMatches();
-		//v.addMatch(m3);
-		//v.generateSchedule();
-		v.calcScore();
-		//v.addTeamToRanking();
+		//ArrayList<FootballMatch> round = v.getPlayedMatches();
+		//round.get(0).setGuestScore(4);
+		ArrayList<VolleyMatch> round = v.getPlayedMatches();
+		round.get(0).setGuestScore(3);
+		round.get(0).setHomeScore(0);
+		v.calcScore();*/
+		try {
+	        UIManager.setLookAndFeel(
+	            UIManager.getSystemLookAndFeelClassName());
+			} 
+			catch (UnsupportedLookAndFeelException e) {
+				System.out.println("Look & Feel non supportato");
+			}
+			catch (ClassNotFoundException e) {
+				System.out.println(e);
+			}
+			catch (InstantiationException e) {
+				System.out.println("L'oggetto non puo' essere istanziato");
+			}
+			catch (IllegalAccessException e) {
+				System.out.println("e"); //a cosa serve questa eccezione?Che stampa è una e?
+			}
+			
+			MainWindow mainW = new MainWindow("Gestione Tornei") ;
+			mainW.setVisible(true);
 
-	}
+		}
+
 }
+

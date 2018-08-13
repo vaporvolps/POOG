@@ -17,8 +17,8 @@ public class RugbyMatch extends Match {
 		setHomeDrop(homeDrop);
 		setGuestDrop(guestDrop);
 	}
-	public RugbyMatch(Date dateMatch, Team homeTeam, Team guestTeam, int homeScore, int guestScore,int homeTry,int guestTry,int homeConversions,int guestConversions,int homeDrop,int guestDrop){
-		super ( dateMatch, homeTeam, guestTeam, homeScore, guestScore);
+	public RugbyMatch( Team homeTeam, Team guestTeam, int homeScore, int guestScore,int homeTry,int guestTry,int homeConversions,int guestConversions,int homeDrop,int guestDrop){
+		super ( homeTeam, guestTeam, homeScore, guestScore);
 		setHomeTry(homeTry);
 		setGuestTry(guestTry);
 		setHomeConversions(homeConversions);

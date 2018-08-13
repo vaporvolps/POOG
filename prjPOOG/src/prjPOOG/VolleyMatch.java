@@ -17,8 +17,8 @@ public class VolleyMatch extends Match {
 		setAllHomeSet(homeSet);
 		setAllGuestSet(guestSet);
 	}
-	public VolleyMatch (Date dateMatch, Team homeTeam, Team guestTeam, int homeScore, int guestScore, ArrayList<Integer> homeSet, ArrayList<Integer> guestSet){
-		super(dateMatch,homeTeam,guestTeam,homeScore,guestScore);
+	public VolleyMatch (Team homeTeam, Team guestTeam, int homeScore, int guestScore, ArrayList<Integer> homeSet, ArrayList<Integer> guestSet){
+		super(homeTeam,guestTeam,homeScore,guestScore);
 		setAllHomeSet(homeSet);
 		setAllGuestSet(guestSet);
 	}
